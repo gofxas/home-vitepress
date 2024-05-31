@@ -3,13 +3,14 @@ export default {
     base: "/数码/",
     items: [
       { text: "小屏幕收集收录", link: "compactphone" },
-      // {
-      //   text: "各个房间",
-      //   collapsed: false,
-      //   items: [
-      //     { text: "客厅", link: "客厅" },
-      //   ],
-      // },
+
+      {
+        text: "Sony XZ1C",
+        collapsed: true,
+        items: [
+          { text: "Sony xz1c 优化", link: "xz1c" }
+        ],
+      }
     ],
   },
 };
