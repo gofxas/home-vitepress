@@ -1,0 +1,321 @@
+## 软破和硬破[](https://chenshake.com/2024/04/10/switch-Hack/#%E8%BD%AF%E7%A0%B4%E5%92%8C%E7%A1%AC%E7%A0%B4)
+
+switch的软破和硬破，都是利于相同的一个漏洞，达到的目的也是相同的，通过SD卡启动，绕过限制。
+
+所以SD卡的大气层整合包，是相同的。
+
+## 大气层整合包和大气层差异[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%A4%A7%E6%B0%94%E5%B1%82%E6%95%B4%E5%90%88%E5%8C%85%E5%92%8C%E5%A4%A7%E6%B0%94%E5%B1%82%E5%B7%AE%E5%BC%82)
+
+我看了很多视频，包括对比目录。我这里整理一下
+
+下载大气层的解压包，你还需要做下面2件事情，才能正常使用。
+
+- bootloader，将Hekate下载到本地，复制到SSD卡根目录
+- 证书：需要下载switch的证书，放到大气层文件夹里，这样你才能启动游戏。
+- tools：switch目录下工具并不是必须，有几个工具是刚需：dns屏蔽，升级固件的daybreak_x，安装游戏的DBI。
+
+这样基本一个整合包就可以正常运行。目前整合包上存放的工具非常多。
+
+**SD卡根目录**
+
+![dir](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/086cb5cd7c404dedbd4ae592d9703bd0~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=335&h=600&s=44912&e=jpg&b=fffefe "sd卡目录")
+
+# 学习材料[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99)
+
+这几天深入学习switch，了解一下所谓的switch的生态。
+
+- [Switch Firmwares](https://darthsternie.net/switch-firmwares/)
+- [大气层](https://github.com/Atmosphere-NX/Atmosphere/releases)
+- [大气层整合包](https://docs.qq.com/doc/DTlJyb25FZ2ViTXhj?u=6b808ad5aa794c9d8cd732746e4733da)
+
+整合包是解决大气层还欠缺的各种工具，汉化等。让你开箱即用。
+
+# 破解[](https://chenshake.com/2024/04/10/switch-Hack/#%E7%A0%B4%E8%A7%A3)
+
+switch的破解分成两种：硬破和软破。他们都是利用了芯片的漏洞（进入Nvidia T210的工程模式，RCM），运行自制代码。这就意味着可以引导到自制系统中，从而跳过NS自带系统的限制。
+
+两者的区别在于
+
+- 硬破：需要拆机焊接，需要有焊接经验，操作麻烦，好处是一次操作，终身受益。同时没有版本的限制，只要switch都支持硬破。
+- 软破：就不需要焊接，通过一个特殊的装置（RCMLoader），可以进入到RCM中。
+
+但在新版本的switch中，官方屏蔽了这种做法，所以只能在老机器中可行，目前说是2018年6月前的机器。且每次关机，都需要重新注入，引导到自制系统中，稍微麻烦。
+
+可以简单理解，无论软解和硬解，最终的目的就是进入这个界面，后续的操作都一样，软解和硬解，都是支持虚拟系统，双系统。
+
+![Hekate](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/36ca55c62ac948a697fca7c1df31c0d2~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1727&h=989&s=30266&e=webp&b=303030 "Hekate")
+
+软破买一个RCMLoader，成本在50RMB，硬破使用树莓派的方案，150块RMB。
+
+## 硬破流程[](https://chenshake.com/2024/04/10/switch-Hack/#%E7%A1%AC%E7%A0%B4%E6%B5%81%E7%A8%8B)
+
+第一步肯定是手工活，打开swith，焊接破解芯片。这个活，其实就只能专业厂商淘宝店来做。
+
+第二步，才是搞软件，这才是我能做的事情。
+
+理解系统的版本，开机启动的时候，有一个正版系统，一个虚拟系统
+
+假设
+
+- 正版系统：switch 固件版本 17.0.1，升级固件版本可以在线升级。
+- 虚拟系统：switch 固件版本 17.0.1+大气层1.6.2，虚拟系统固件升级，只能是离线升级。离线升级就是在sd卡里放上更新的switch 固件版本 ，在虚拟系统里安装，实现更新。
+
+新的游戏，会对switch 固件版本有依赖，所以有时候如果你想玩新的游戏，你就只能升级固件。在2024年，17.0.1+大气层1.6.2，应该是不会有固件升级的需求。2025年，据说switch 2.0 要发布。
+
+大气层的版本支持的switch的版本是有对应关系的。如果你进入正版系统，升级版本到18.0.0，那么你的witch，就会变成砖头。
+
+你进入到启动界面，无论虚拟系统，正版系统，都会无法启动。这个其实是和大气层的版本相关的。大气层的版本必须和主机的固件版本对应，才能让虚拟系统和正版系统启动。
+
+挽救砖头也简单，你需要
+
+- 升级sd卡的大气层系统从1.6.2到1.7.0
+- 离线升级虚拟系统的switch 固件版本到18.0.0。（不升级虚拟系统的switch固件，也是可以正常使用）
+
+具体的操作过程，我大概记录一下
+
+- 从switch拔下sd卡
+- 挂载电脑上，只保留**emuMMC** 和 **Nintendo** 两个文件夹，其余删除
+- 下载1.7.0的大气层整合包，上面的地址可以直接下载，解压放到根目录。
+- 下载switch 18.0.0 固件，解压后，在sd卡里建立自己命名文件夹，例如fireware，把固件放进去。
+- 插入sd卡到switch，启动，这个时候，你就可以进入虚拟系统，这个时候，表示已经升级完成大气层系统到1.7.0。
+- 进入虚拟系统后，通过daybreak，选择fireware的文件夹，进行虚拟系统的switch版本升级，把虚拟系统switch固件离线升级到18.0.0 。
+- 最终的效果就是虚拟系统的switch的固件版本，和正版switch的固件版本一致。
+
+# Switch 版本[](https://chenshake.com/2024/04/10/switch-Hack/#switch-%E7%89%88%E6%9C%AC)
+
+游戏机和其他电子产品不一样，版本更新比较慢。
+
+任天堂Switch 自 2017 年 3 月发布以来，至今已发布过四种机型：
+
+- **普通版**：于 2017 年 3 月 3 日发布，是 Switch 的初代版本。续航能力约为 2.5-6 小时。
+- **续航增强版**：于 2019 年 8 月 20 日发布，在普通版的基础上提升了续航能力，可达 4.5-9 小时。
+- **Switch Lite**：于 2019 年 9 月 20 日发布，是 Switch 的掌机版本，不可连接电视。
+- **OLED 款式**：于 2021 年 10 月 8 日发布，在续航增强版的基础上升级了屏幕、存储空间、支架等。
+
+以下是四种机型的详细对比：
+
+| 机型          | 发布日期            | 屏幕         | 处理器             | 内存         | 存储空间 | 续航能力     | 重量                | 价格    |
+| ----------- | --------------- | ---------- | --------------- | ---------- | ---- | -------- | ----------------- | ----- |
+| 普通版         | 2017 年 3 月 3 日  | 6.2 英寸 LCD | NVIDIA Tegra X1 | 4GB LPDDR4 | 32GB | 2.5-6 小时 | 约 398g（含 Joy-Con） | ¥2099 |
+| 续航增强版       | 2019 年 8 月 20 日 | 6.2 英寸 LCD | NVIDIA Tegra X1 | 4GB LPDDR4 | 64GB | 4.5-9 小时 | 约 398g（含 Joy-Con） | ¥2499 |
+| Switch Lite | 2019 年 9 月 20 日 | 5.5 英寸 LCD | NVIDIA Tegra X1 | 4GB LPDDR4 | 32GB | 3-7 小时   | 约 275g            | ¥1999 |
+| OLED 款式     | 2021 年 10 月 8 日 | 7 英寸 OLED  | NVIDIA Tegra X1 | 4GB LPDDR4 | 64GB | 4.5-9 小时 | 约 420g（含 Joy-Con） | ¥2499 |
+
+我是2020年，给孩子购买的**续航增强版**。
+
+# 破解[](https://chenshake.com/2024/04/10/switch-Hack/#%E7%A0%B4%E8%A7%A3-1)
+
+逛淘宝，会发现所谓软破和硬破，对于2024年，硬破是唯一选择，并且现在的硬破，以前硬破有所谓的芯片选择，所谓的国产芯片，由于主控，成本高，价格要400多，现在改成树莓派的主控，成本就降低到40，采用树莓派主控方案，拆开主机焊接破解芯片的方式破解，费用已经降低到150元以下，可以理解就是100块钱的手工费。
+
+推荐师傅：郭师傅数码电玩DIY，淘宝抖音同名。
+
+# 硬破软件[](https://chenshake.com/2024/04/10/switch-Hack/#%E7%A1%AC%E7%A0%B4%E8%BD%AF%E4%BB%B6)
+
+硬破盒子后，需要你准备一张SD卡，破解的系统都会装在这张卡上。
+
+## Hekate 引导[](https://chenshake.com/2024/04/10/switch-Hack/#hekate-%E5%BC%95%E5%AF%BC)
+
+Hekate是一款用于任天堂Switch游戏机的开源引导加载程序（Bootloader）。它主要用于解锁Switch的安全启动限制，允许用户执行各种高级操作。
+
+Switch启动的时候，先到这个画面，让你选择
+
+![Hekate](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0031ec10a3734d70bfe4395427d3aeff~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1727&h=989&s=30266&e=webp&b=303030 "Hekate")
+
+## 大气层 Atmosphere[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%A4%A7%E6%B0%94%E5%B1%82-atmosphere)
+
+大气层是Switch 中的免费开源的破解系统，目前也是唯一选择。树莓派芯片也只能用大气层系统，所以现在的破解机都只能在大气层上运行。
+
+![Hekate-start](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6009519c29e443e9490dbf399a172ff~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=978&h=570&s=60370&e=jpg&b=2e2e2e "Hekate-start")
+
+唯一的选择就是**大气层虚拟系统**。
+
+![choose](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/367c2acf20934d9daf598c79907fb932~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=967&h=464&s=65545&e=jpg&b=2f2f2f "choose")
+
+大气层整合包，其实就是包括Hekate和大气层 Atmosphere，还有一堆的工具。
+
+大气层的版本，可以通过[大气层版本号](https://github.com/Atmosphere-NX/Atmosphere/releases)
+
+每个版本支持的switch的版本是不一样的。
+
+- 大气层1.7.0 支持switch固件版本 18.0.0
+- 大气层1.6.2 支持switch固件版本 17.0.1 （孩子当前使用的版本）
+
+大气层本身是一个开源工具，本身还是不支持破解，你需要使用大气层整合包，才能实现真正的破解。
+
+## Ban 机[](https://chenshake.com/2024/04/10/switch-Hack/#ban-%E6%9C%BA)
+
+也就是被任天堂拉黑的机器，被 Ban 后的机器无法与任天堂官方服务器联网，除此外和未 Ban 的机器无任何区别，判断是否 Ban 机也很简单，在正版系统下进入 eshop 看看是否能加载出来就知道了。
+
+如果你不想被 Ban，后续玩破解游戏都需要在 虚拟系统 进行，在虚拟模式下进行的所有操作都是跟 NS 主机的原版系统 完全独立 的，所以只要你不作死和手贱，一般就不会被 Ban。
+
+# 特斯拉和金手指[](https://chenshake.com/2024/04/10/switch-Hack/#%E7%89%B9%E6%96%AF%E6%8B%89%E5%92%8C%E9%87%91%E6%89%8B%E6%8C%87)
+
+打游戏没法通关，采用作弊的方式。小孩不喜欢这样玩，所以就不需要研究这块。
+
+# 上传游戏[](https://chenshake.com/2024/04/10/switch-Hack/#%E4%B8%8A%E4%BC%A0%E6%B8%B8%E6%88%8F)
+
+需要一台windows电脑和一根Type-c的数据线。
+
+要记住，内存卡任何文件不能出现中文
+
+1：下载好游戏的安装包，打开switch相册
+
+![相册](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8aacfccda1344b7ea582b2432ce9dd19~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1157&h=501&s=170282&e=jpg&b=2f2e2e "相册")
+
+2：点击DBI插件
+
+![DBI](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b13064f490340a388126522bad2adc6~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1408&h=771&s=177734&e=jpg&b=292a2e "DBI")
+
+3：点击右手柄x按键
+
+![x](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e0e7c71a061443f7a88a5e833f2b7f48~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=914&h=536&s=53200&e=jpg&b=010182 "X")
+
+屏幕显示，记得选择 **RUN MTP responder**
+
+![mtp](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed4eb6babe3541548ef80b8d35cac961~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=933&h=394&s=69806&e=jpg&b=010183 "mtp")
+
+4:switch 用数据线连接电脑，电脑会出现弹窗，或者出现switch图标。
+
+![install](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/83b50ba331d74d279ba765a2e01e7930~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1190&h=300&s=53755&e=jpg&b=fbfafa "install")
+
+5：将游戏本体，更新包，复制到五号盘（Micro SD install）
+
+一定要记住**只copy文件，不能是文件夹**
+
+这是游戏拷贝和安装过程，不要太着急，你可以多个游戏一起copy过去，也可以一个游戏copy过去，安装成功，再装第二个。
+
+等待进度条读取完成，按下右手柄**房子键**
+
+![home](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98b4e2102eb04251bb6e8d2e5841bf4d~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1000&h=869&s=430849&e=png&b=fefefe "home")
+
+# 删除软件[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6)
+
+找到要删除的游戏，点击手柄上的 + 号，最后点击删除软件即可
+
+选择：数据管理，选择删除软件就可以。
+
+![delete](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ff6e2bd1f46442fa292e0b5f3f15a8f~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1080&h=686&s=98573&e=jpg&b=474747 "delete")
+
+# 系统版本和大气层版本[](https://chenshake.com/2024/04/10/switch-Hack/#%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%E5%92%8C%E5%A4%A7%E6%B0%94%E5%B1%82%E7%89%88%E6%9C%AC)
+
+![version](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/50cbb0ed22d34ed6b41a08b104da39b4~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1393&h=467&s=92431&e=jpg&b=f0f0f0 "version")
+
+上图，应该是狠古老。目前主流的版本应该是
+
+- 大气层1.7.0 支持switch 18.0.0
+- 大气层1.6.2 支持switch 17.0.1 （孩子当前使用的版本）
+
+# 游戏不能玩[](https://chenshake.com/2024/04/10/switch-Hack/#%E6%B8%B8%E6%88%8F%E4%B8%8D%E8%83%BD%E7%8E%A9)
+
+![work](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8eeda473fa1b4accaa67ec59d55e045f~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=920&h=659&s=130725&e=jpg&b=f1f0f0 "work")
+
+# 更换内存卡[](https://chenshake.com/2024/04/10/switch-Hack/#%E6%9B%B4%E6%8D%A2%E5%86%85%E5%AD%98%E5%8D%A1)
+
+现在是一张512G的内存卡，家里还有一张1T的内存卡，如何把1T的卡也能用起来呢。
+
+已经破解的系统，默认是从SD卡启动。
+
+好像最简单的方式，就是把512G卡的内容，直接复制到1T的，应该也是没问题。如果两个SD卡都是采用exfat格式。
+
+下面的记录过程，就当一个原理理解。
+
+### 格式化[](https://chenshake.com/2024/04/10/switch-Hack/#%E6%A0%BC%E5%BC%8F%E5%8C%96)
+
+电脑格式化SD卡为exfat格式，分配单元大小为32k。选择32k，可以装更多游戏，如果是128k，那么性能更好，建议使用128k，我咨询了Gemini AI。
+
+有用户建议用fat32格式，32k。文件系统不容易损坏。
+
+![exfat](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3e3383118051485c91ab2bad03587d6f~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=336&h=482&s=25040&e=jpg&b=eef3f6 "exfat")
+
+### switch 支持exfat驱动[](https://chenshake.com/2024/04/10/switch-Hack/#switch-%E6%94%AF%E6%8C%81exfat%E9%A9%B1%E5%8A%A8)
+
+让swich识别exfat格式的卡。
+
+由于我的switch已经破解使用中，所以肯定是带驱动，可以正常识别。
+
+这个步骤可以跳过
+
+### 大气层整合包[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%A4%A7%E6%B0%94%E5%B1%82%E6%95%B4%E5%90%88%E5%8C%85)
+
+把大气层整合包解压，放到SD卡根目录下。
+
+### 开机启动[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8)
+
+把SD卡插入switch，进入Hekate，选择虚拟系统
+
+![vir](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/133fd316f3544468a26b7959046e5a6c~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=748&h=548&s=51088&e=jpg&b=1b272f "vir")
+
+### 创建emuMMC[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%88%9B%E5%BB%BAemummc)
+
+![emc](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/afcacd7e92e84b3d81acfffe632a2bfb~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=714&h=490&s=50036&e=jpg&b=362f38 "emc")
+
+这其实是从系统的正版固件，copy到sd卡里虚拟系统。
+
+### SD卡文件[](https://chenshake.com/2024/04/10/switch-Hack/#sd%E5%8D%A1%E6%96%87%E4%BB%B6)
+
+![sd](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a217e8b76ced4843a33f4efd1cbd201f~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=520&h=302&s=25165&e=jpg&b=242f3b "sd")
+
+### 成功[](https://chenshake.com/2024/04/10/switch-Hack/#%E6%88%90%E5%8A%9F)
+
+![ok](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/18639534123b4c4e916fad033894df6e~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=822&h=528&s=53690&e=jpg&b=182029 "ok")
+
+### 检查[](https://chenshake.com/2024/04/10/switch-Hack/#%E6%A3%80%E6%9F%A5)
+
+![open](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/163244c85d16489db22e29482786fe6c~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=761&h=607&s=58135&e=jpg&b=1a222b "open")
+
+### 启动[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%90%AF%E5%8A%A8)
+
+![test](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee1eda379dab4f2889773bd4d710651a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=858&h=496&s=50108&e=jpg&b=16222d "test")
+
+### 选择大气层虚拟系统[](https://chenshake.com/2024/04/10/switch-Hack/#%E9%80%89%E6%8B%A9%E5%A4%A7%E6%B0%94%E5%B1%82%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F)
+
+![end](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01b683af6e7f4abcb4e33ece6cb59998~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=681&h=492&s=31308&e=jpg&b=172343 "end")
+
+# 软解流程[](https://chenshake.com/2024/04/10/switch-Hack/#%E8%BD%AF%E8%A7%A3%E6%B5%81%E7%A8%8B)
+
+刚好身边有一台软解的switch，打算验证一遍网上所学
+
+- sd卡格式化fat32格式
+- 放上整合包（1.7.0）+switch 18.0.0 固件版本
+- switch装上短接器
+- ssd卡放入switch
+- 先按住音量加不放手再按一下电源键进入黑屏rcm模式
+- 通过usb线，使用TegraRcmGUI_v2.6注入（hekate v6.1.1 & Nyx v1.6.1），
+
+看到启动进入Hekate界面，就算成功。进入Hekate界面后松开音量减。
+
+下周进行操作，希望和预期一致。
+
+[参考文章](https://www.2023game.com/nsaita/pojie/205278.html)
+
+# 备注[](https://chenshake.com/2024/04/10/switch-Hack/#%E5%A4%87%E6%B3%A8)
+
+- [1：任天堂Switch NS 破解硬破装树莓派芯片 游戏机](https://www.youtube.com/watch?v=KLayLc8TI9c&ab_channel=%E4%BA%8C%E6%89%8B%E5%85%89%E5%9C%88)
+- [2：Switch破解后做双系统教程大气层虚拟系统emuMMC](https://www.youtube.com/watch?v=u4vuDy2RI30&ab_channel=%E4%BA%8C%E6%89%8B%E5%85%89%E5%9C%88)
+- [3：硬破后如何上传游戏](https://www.youtube.com/watch?v=v3jilUWPs20&ab_channel=%E4%BA%8C%E6%89%8B%E5%85%89%E5%9C%88)
+- [4：商家文档](https://docs.qq.com/doc/DTkV1QUdGVFhMVHR3?u=6b808ad5aa794c9d8cd732746e4733da)
+- [5：硬破后升级大气层和switch固件](https://zhuanlan.zhihu.com/p/627504313)
+- [6：升级视频](https://www.youtube.com/watch?v=MB4jEhz84E4&t=204s&ab_channel=%E5%A5%BD%E7%89%A9%E6%80%AA%E5%92%96)
+- [7：砖头修复](https://www.youtube.com/watch?v=t0Y342KsKtc&ab_channel=%E6%80%80%E6%97%A7%E6%B8%B8%E6%88%8F%E5%A4%A7%E5%8F%94%E5%A4%A7%E6%85%A7)
+- [8：香港人救砖过程](https://www.youtube.com/watch?v=34VANDsiuqs&t=300s&ab_channel=carcaschoi)
+- [9：Switch系统升级和大气层破解相关](https://songlin.me/2023/05/13/switch/)
+- [10：软解流程](https://www.corys.fun/?p=125)
+- [11:使用注入器開機方法](https://www.youtube.com/watch?v=veh_fkcZgqI&ab_channel=SeanChan)
+- [老外软解过程，缺少底下电脑的操作](https://www.youtube.com/watch?v=7EsPvinHZKY&ab_channel=Nevercholt)
+- [软解机器使用电脑通过TegraRcmGUI注入](https://www.bilibili.com/video/BV11r4y1K73i/?vd_source=2d2cd39fe7b6ad8e2806cdd37537049e) *[Tinfoil 黑商店](https://www.youtube.com/watch?v=o9qUgJtO8u8&t=2s&ab_channel=ThaGle%C7%9Dsh)
+- [软解step by step](https://www.youtube.com/watch?v=OvZhFX183xg&t=10s&ab_channel=Manito)
+- [详细过程，软解](https://www.youtube.com/watch?v=GfZXbCLVFB8&t=238s&ab_channel=Kristofer)
+- [switch知识合集](https://docs.qq.com/doc/DYVNDUG54V3J5V25E)
+
+## 链接[](https://chenshake.com/2024/04/10/switch-Hack/#%E9%93%BE%E6%8E%A5)
+
+LINKS TO MOD，
+
+- Check If Your Switch Is Patched: <https://ismyswitchpatched.com/>
+- EaseUs Partition: <https://www.easeus.com/partition-manager/epm-free.html>
+- TegraRCM: <https://github.com/eliboa/TegraRcmGUI/releases>
+- Atmosphere: <https://github.com/Atmosphere-NX/Atmosphere/releases>
+- Hekate: <https://github.com/CTCaer/hekate/releases>
+- Sig Patches: <https://sigmapatches.su>
+- <https://rentry.org/EristaEmuNAND>
+- Sig Patches： <https://gbatemp.net/threads/sigpatches-for-atmosphere-hekate-fss0-fusee-package3.571543/>

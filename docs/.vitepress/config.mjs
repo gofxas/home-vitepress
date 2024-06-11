@@ -6,14 +6,14 @@ export default defineConfig({
   title: "随便⛏",
   description: "随便记点 有趣好玩有用的",
   themeConfig: {
-    search: {
-      provider: "algolia",
-      options: {
-        appId: "OG2WKLPLDF",
-        apiKey: "60bfb44fa67fe45610e4d82bfa3e2f34",
-        indexName: "⛏不赢",
-      },
-    },
+    // search: {
+    //   provider: "algolia",
+    //   options: {
+    //     appId: "OG2WKLPLDF",
+    //     apiKey: "60bfb44fa67fe45610e4d82bfa3e2f34",
+    //     indexName: "⛏不赢",
+    //   },
+    // },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
