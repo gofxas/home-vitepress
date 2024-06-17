@@ -11,7 +11,7 @@ export default {
         collapsed:true,
         items:[
           { text: "Switch软解与硬解",link:"Switch软解与硬解"},
-          { text: "Switch破解软解列表",link:"xxxxx520"},
+          { text: "Switch破解应用列表",link:"xxxxx520"},
         ]
       },
       {
