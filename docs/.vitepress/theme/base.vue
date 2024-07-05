@@ -1,7 +1,11 @@
 <script setup>
 import DefaultTheme from "vitepress/theme";
-
+import { unref, computed } from 'vue'
+import { useData } from "vitepress";
 const { Layout } = DefaultTheme;
+const { page } = useData();
+import Comment from "./Comment.vue";
+const isHome = computed(() => unref(page)?.filePath === "index.md");
 
 </script>
 
@@ -13,11 +17,16 @@ const { Layout } = DefaultTheme;
         <h1 class="title">页面丢失了哦</h1>
         <div class="divider"></div>
         <blockquote class="quote">過此相逢陌路人，都如元來曾相識。</blockquote>
-        <div class="action"><a class="link" href="/" aria-label="go to home">返回首页</a></div>
+        <div class="action">
+          <a class="link" href="/" aria-label="go to home">返回首页</a>
+        </div>
       </div>
     </template>
     <template #layout-bottom>
       <!-- footer -->
+    </template>
+    <template #doc-after>
+      <Comment v-if="!isHome" :key="page.filePath"></Comment>
     </template>
   </Layout>
 </template>
