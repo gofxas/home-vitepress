@@ -1,3 +1,3 @@
 分享名称：cla.yml  
-分享链接：http://nas.v2k.fun:8001/#s/-p28yr1g  
+分享链接：[下载](/cla.yml)
 访问密码：1122
