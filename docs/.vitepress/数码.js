@@ -15,7 +15,7 @@ export default {
         ]
       },
       {
-        text: "Sony XZ1C",
+        text: "Sony",
         collapsed: true,
         items: [
           { text: "优化", link: "xz1c" },
