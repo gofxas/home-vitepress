@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import HomeDesign from "./装修";
+// import HomeDesign from "./装修";
 import Digital from "./数码";
 import Coding from "./代码";
 // https://vitepress.dev/reference/site-config
@@ -20,11 +20,11 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "代码", link: "/代码/" },
       { text: "数码", link: "/数码/" },
-      { text: "装修", link: "/装修/" },
+      // { text: "装修", link: "/装修/" },
     ],
 
     sidebar: {
-      ...HomeDesign,
+      // ...HomeDesign,
       ...Digital,
       ...Coding,
     },
