@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as a,a1 as t}from"./chunks/framework.BdbYcYPl.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"数码/xz1c.md","filePath":"数码/xz1c.md"}'),o={name:"数码/xz1c.md"},i=t("",102),b=[i];function p(n,l,c,s,h,E){return a(),r("div",null,b)}const d=e(o,[["render",p]]);export{m as __pageData,d as default};
