@@ -1,0 +1,1 @@
+import{_ as t,c as d,o as r,a1 as e}from"./chunks/framework.BdbYcYPl.js";const m=JSON.parse('{"title":"新房装修流程","description":"","frontmatter":{},"headers":[],"relativePath":"装修/index.md","filePath":"装修/index.md"}'),a={name:"装修/index.md"},o=e("",2),_=[o];function n(b,s,c,i,h,l){return r(),d("div",null,_)}const f=t(a,[["render",n]]);export{m as __pageData,f as default};
