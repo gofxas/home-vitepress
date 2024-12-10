@@ -19,4 +19,10 @@ features:
 
 ### Ohters
 
-[GITHUB](https://github.com/gofxas) [IT 工具箱](https://tool.cpdd.cool/) [中国古诗词](https://poe.cpdd.cool/) [厨房定时器](https://timing.cpdd.cool/) [小米论坛解锁申请答题练习](https://boot.cpdd.cool/) [模仿微信钱包](https://wexinfee.cpdd.cool/) [五子棋在线](https://chess.cpdd.cool/)
+[GITHUB](https://github.com/gofxas)  
+[IT 工具箱](https://tool.cpdd.cool/)  
+[中国古诗词](https://poe.cpdd.cool/)  
+[厨房定时器](https://timing.cpdd.cool/)  
+[小米论坛解锁申请答题练习](https://boot.cpdd.cool/)  
+[模仿微信钱包](https://wexinfee.cpdd.cool/)  
+[五子棋在线](https://chess.cpdd.cool/)
