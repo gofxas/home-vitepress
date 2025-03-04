@@ -28,7 +28,6 @@ export default defineConfig({
       ...Digital,
       ...Coding,
     },
-
     socialLinks: [{ icon: "github", link: "https://github.com/gofxas" }],
   },
   head: [
