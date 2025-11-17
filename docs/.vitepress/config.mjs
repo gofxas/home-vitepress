@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 // import HomeDesign from "./装修";
+import 瞎扯 from "./瞎扯";
 import Digital from "./数码";
 import Coding from "./代码";
 // https://vitepress.dev/reference/site-config
@@ -18,6 +19,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
+      { text: "瞎扯", link: "/瞎扯/" },
       { text: "代码", link: "/代码/" },
       { text: "数码", link: "/数码/" },
       // { text: "装修", link: "/装修/" },
@@ -25,6 +27,7 @@ export default defineConfig({
 
     sidebar: {
       // ...HomeDesign,
+      ...瞎扯,
       ...Digital,
       ...Coding,
     },

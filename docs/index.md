@@ -7,6 +7,10 @@ hero:
   # text: "随便搞搞摸鱼的好玩的"
   tagline: 就是记录一些有趣的
 features:
+  - icon: 🥟
+    title: 瞎扯
+    details: 一些有趣的东西.
+    link: /瞎扯/index.md
   - icon: 💻
     title: 代码
     details: 一些代码片段，开源项目介绍.
