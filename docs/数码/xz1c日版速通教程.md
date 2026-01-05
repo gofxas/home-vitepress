@@ -69,7 +69,7 @@ lilac:/ $
 
 
 再执行 `cd /data/local/tmp/` 进入到 tmp 目录，执行`ls`可以查看有 bindershell 和 xfl-o77.mbn 文件  
-给 bindershell 添加可执行权限 `chmod 777 bindershell`   
+给 bindershell 添加可执行权限 `chmod 755 bindershell`  
 运行 `./bindershell`   
 此时跑完会出现如下，$符号变成了# 就成功   
 ```
