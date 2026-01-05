@@ -1,4 +1,4 @@
-# XZ1C Docomo 漏洞解锁方案速通版本
+# XZ1C Docomo 漏洞解锁BL(bootloader)方案速通版本
 
 > 基于 @SOraWiND [原创教程](https://www.coolapk.com/feed/69454244?s=MWRkMmNhNGIxMDU4MDIxZzY5NWIyOGM4ega1571)，步骤简化
 
