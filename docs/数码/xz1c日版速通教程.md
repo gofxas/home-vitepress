@@ -1,7 +1,8 @@
 # XZ1C Docomo 漏洞解锁方案速通版本
 
-> 基于 @SOraWiND 原创教程，步骤简化
+> 基于 @SOraWiND [原创教程](https://www.coolapk.com/feed/69454244?s=MWRkMmNhNGIxMDU4MDIxZzY5NWIyOGM4ega1571)，步骤简化
 
+> 资源下载地址，需要的东西都准备了  链接：https://pan.quark.cn/s/844d886c5b49 提取码：NtTH  
 ## 📋 准备工作清单
 
 在开始解锁前，请确保准备好以下文件和工具：
@@ -69,6 +70,7 @@ lilac:/ $
 
 再执行 `cd /data/local/tmp/` 进入到 tmp 目录，执行`ls`可以查看有 bindershell 和 xfl-o77.mbn 文件  
 给 bindershell 添加可执行权限 `chmod 777 bindershell`   
+运行 `./bindershell`   
 此时跑完会出现如下，$符号变成了# 就成功   
 ```
 lilac:/ #  
@@ -83,7 +85,7 @@ dd if=/dev/block/bootdevice/by-name/TA of=/sdcard/TA-locked.img
 ```
 dd if=xfl-o77.mbn of=/dev/block/bootdevice/by-name/xfl
 ```
-此时 退出adb shell 环境，可以重新连接也可以 执行 `exit` 。 
+此时 退出adb shell 环境，可以重新连接, 也可以执行 `exit` 。 
 看到 `你的路径>` 的时候 ，说明退出成功。 此时把ta文件导出一下  
 ```
 adb pull /sdcard/TA-locked.img 
