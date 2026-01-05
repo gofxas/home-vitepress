@@ -19,6 +19,7 @@ export default {
         collapsed: true,
         items: [
           { text: "优化", link: "xz1c" },
+          { text: "xz1c日版解锁", link: "xz1c日版速通教程" },
           { text: "解锁后刷机", link: "xz1c刷机" },
         ],
       }
