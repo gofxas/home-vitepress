@@ -1,0 +1,1 @@
+import{_ as p,c as e,o as a,a1 as r}from"./chunks/framework.BdbYcYPl.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"瞎扯/让子弹飞台词.md","filePath":"瞎扯/让子弹飞台词.md"}'),t={name:"瞎扯/让子弹飞台词.md"},o=r("",1613),m=[o];function h(n,l,s,i,d,c){return a(),e("div",null,m)}const b=p(t,[["render",h]]);export{g as __pageData,b as default};
