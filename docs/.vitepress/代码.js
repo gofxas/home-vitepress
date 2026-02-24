@@ -4,6 +4,7 @@ export default {
     items: [
       { text: "Cloudflare 设置DDNS（免费的动态DNS）", link: "cloudflare 设置DDNS" },
       { text: "临时录个屏，用浏览器就够啦~", link: "屏幕录制" },
+      { text: "我为自己考雅思做了个单词小程序", link: "我为自己考雅思做了个单词小程序" },
     ],
   },
 };

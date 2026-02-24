@@ -21,7 +21,13 @@ features:
     link: /数码/index.md
 ---
 
-### Ohters
+## 🆕 最新文章
+
+### [我为自己考雅思做了个单词小程序](/代码/我为自己考雅思做了个单词小程序)
+
+> 找遍了全网，终于让我发现一个可以一键生成单词本 PDF 的神仙工具！支持小学到大学、考研、雅思托福词库，每个单词都有详细拆解，支持拼写练习和 PDF 导出打印。
+
+### Others
 
 [GITHUB](https://github.com/gofxas)  
 [IT 工具箱](https://tool.cpdd.cool/)  
